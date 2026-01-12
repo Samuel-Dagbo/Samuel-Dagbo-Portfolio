@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 html {
@@ -15,6 +16,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: var(--bg);
   color: var(--text);
+  overflow-x: hidden;
 }
 
 img {
@@ -177,7 +179,20 @@ body.dark {
   padding: 80px 8%;
   background: linear-gradient(135deg, #00adb5, #009aa2);
   color: #ffffff;
+  flex-wrap: wrap;
 }
+
+@media (max-width: 860px) {
+  .hero-content {
+    width: 100%;
+  }
+
+  .typing {
+    white-space: normal;
+    border-right: none;
+  }
+}
+
 
 .hero-content h2 {
   font-size: 36px;
@@ -189,10 +204,10 @@ body.dark {
   margin-bottom: 20px;
 }
 
-.typing-wrapper {
-  width: 520px;            /* Lock width */
-  max-width: 100%;
-  margin-bottom: 20px;
+ .typing-wrapper {
+  max-width: 520px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .typing {
