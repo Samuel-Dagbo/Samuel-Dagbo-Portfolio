@@ -189,6 +189,12 @@ body.dark {
   margin-bottom: 20px;
 }
 
+.typing-wrapper {
+  width: 520px;            /* Lock width */
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
 .typing {
   display: inline-block;
   font-size: 18px;
@@ -201,6 +207,7 @@ body.dark {
     typing 4.5s steps(50, end) infinite,
     blink 0.75s step-end infinite;
 }
+
 
 @keyframes typing {
   0% {
