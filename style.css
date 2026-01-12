@@ -205,9 +205,11 @@ body.dark {
 }
 
  .typing-wrapper {
-  max-width: 520px;
+  max-width: 100%;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .typing {
@@ -219,7 +221,7 @@ body.dark {
   border-right: 3px solid #fff;
   width: 0;
   animation:
-    typing 10s steps(50, end) infinite,
+    typing 10s steps(70, end) infinite,
     blink 0.75s step-end infinite;
 }
 
@@ -244,6 +246,29 @@ body.dark {
     border-color: transparent;
   }
 }
+
+@media (max-width: 600px) {
+  .typing-wrapper {
+    font-size: 16px;
+    max-width: 100%;
+  }
+
+  .typing {
+    animation: typing 12s steps(100, end) infinite, blink 0.75s step-end infinite;
+    
+  }
+}
+
+@media (max-width: 860px) {
+  .typing {
+    white-space: normal; /* allow wrapping */
+    width: 100%;         /* expand to container width */
+    border-right: 3px solid #fff; /* keep cursor */
+    animation: none;     /* temporarily remove typing animation if you want line-by-line wrapping */
+  }
+}
+
+
 
 
 .hero-img img {
