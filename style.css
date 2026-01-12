@@ -190,10 +190,39 @@ body.dark {
 }
 
 .typing {
-  border-right: 2px solid #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  animation:
+    typing 4.5s steps(50, end) infinite,
+    blink 0.75s step-end infinite;
 }
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  40% {
+    width: 100%;
+  }
+  60% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 
 .hero-img img {
   width: 280px;
