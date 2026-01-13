@@ -148,20 +148,29 @@ body.dark {
 @media (max-width: 860px) {
   .navbar {
     position: absolute;
-    top: 65px;
+    top: 100%;
     left: 0;
     width: 100%;
     background: var(--header-bg);
+
     flex-direction: column;
     gap: 12px;
-    padding: 15px 0;
+
     max-height: 0;
+    padding: 0;                 /* 🔥 remove padding */
     overflow: hidden;
-    transition: max-height 0.3s ease;
+
+    opacity: 0;                 /* 🔥 fully hidden */
+    pointer-events: none;       /* 🔥 not clickable */
+
+    transition: max-height 0.3s ease, opacity 0.3s ease;
   }
 
   .navbar.active {
     max-height: 400px;
+    padding: 15px 0;            /* add padding ONLY when open */
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .navbar a {
@@ -173,6 +182,7 @@ body.dark {
     display: flex;
   }
 }
+
 
 /* =========================
    HERO SECTION
